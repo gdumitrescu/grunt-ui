@@ -1,0 +1,23 @@
+{
+  "name": "grunt-ui",
+  "version": "0.0.1",
+  "authors": [
+    "Gabriel Dumitrescu <gabriel@planetmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "components"
+  ],
+  "private": true,
+  "dependencies": {
+  },
+  "devDependencies": {
+    "bootstrap": "~3.0.0",
+    "font-awesome": "~3.2.1"
+  }
+}
