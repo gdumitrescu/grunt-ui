@@ -103,6 +103,24 @@
         build: ["deploy"]
       },
 
+      concurrent: {
+        dev: [
+          "coffee",
+          "compass:dev",
+        ],
+        test: [
+          "jshint"
+        ],
+        prod: [
+          "coffee",
+          "compass:prod"
+        ],
+        minify: [
+          "uglify",
+          "cssmin"
+        ]
+      },
+
       connect: {
         options: {
           port: 9000,
@@ -159,26 +177,24 @@
     grunt.loadNpmTasks("grunt-contrib-connect");
     grunt.loadNpmTasks("grunt-contrib-clean");
     grunt.loadNpmTasks("grunt-gh-pages");
+    grunt.loadNpmTasks("grunt-concurrent");
 
     // notifications
     grunt.loadNpmTasks("grunt-notify");
 
     // register task
     grunt.registerTask("default", [
-      "compass:dev",
-      "coffee",
-      "jshint",
+      "concurrent:dev",
+      "concurrent:test",
       "watch",
       "connect"
     ]);
 
     grunt.registerTask("build", [
-      "compass:prod",
-      "coffee",
-      "jshint",
+      "concurrent:prod",
+      "concurrent:test",
       "concat",
-      "uglify",
-      "cssmin"
+      "concurrent:minify"
     ]);
 
     grunt.registerTask("deploy", [
