@@ -47,9 +47,11 @@
             bare: false,
           },
           files: {
-            "app/js/*.js": [
-              "src/scripts/**/*.coffee",
-              "src/scripts/*.coffee"
+            "app/js/main.js": [
+              "src/scripts/main.coffee"
+            ],
+            "app/js/app.js": [
+              "src/scripts/app.coffee"
             ]
           }
         }
@@ -92,9 +94,26 @@
         build: ["dist"]
       },
 
+      connect: {
+        options: {
+          port: 9000,
+          livereload: 35729,
+          // change this to "0.0.0.0" to access the server from outside
+          hostname: "localhost"
+        },
+        livereload: {
+          options: {
+            open: true,
+            base: [
+              "app"
+            ]
+          }
+        }
+      },
+
       watch: {
         gruntfile: {
-          files: "Gruntfile.js",
+          files: ["Gruntfile.js"],
           tasks: ["jshint:gruntfile"]
         },
         scripts: {
@@ -107,11 +126,11 @@
         },
         coffee: {
           files: ["src/scripts/*.coffee"],
-          tasks: "coffee"
+          tasks: ["coffee"]
         },
         livereload: {
           options: {
-            livereload: true
+            livereload: "<%= connect.options.livereload %>"
           },
           files: ["app/**/*"]
         }
@@ -128,15 +147,20 @@
     grunt.loadNpmTasks("grunt-contrib-uglify");
     grunt.loadNpmTasks("grunt-contrib-concat");
     grunt.loadNpmTasks("grunt-contrib-watch");
+    grunt.loadNpmTasks("grunt-contrib-connect");
     grunt.loadNpmTasks("grunt-contrib-clean");
     grunt.loadNpmTasks("grunt-gh-pages");
+
+    // notifications
+    grunt.loadNpmTasks("grunt-notify");
 
     // register task
     grunt.registerTask("default", [
       "compass:dev",
       "coffee",
       "jshint",
-      "watch"
+      "watch",
+      "connect"
     ]);
 
     grunt.registerTask("build", [
