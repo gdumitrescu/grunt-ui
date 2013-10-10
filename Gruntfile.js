@@ -59,39 +59,48 @@
 
       concat: {
         scripts: {
-          dist: {
+          build: {
             src: [
               "vendor/assets/**/*.js",
-              "src/scripts/**/*.js"
+              "app/js/*.js"
             ],
-            dest: ["dist/js/app.js"]
+            dest: ["deploy/js/app.js"]
+          }
+        },
+        styles: {
+          build: {
+            src: [
+              "vendor/assets/**/*.min.css",
+              "app/css/*.css"
+            ],
+            dest: ["deploy/css/app.css"]
           }
         }
       },
 
       cssmin: {
         css: {
-          src: "dist/css/app.css",
-          dest: "dist/css/app.min.css"
+          src: "deploy/css/app.css",
+          dest: "deploy/css/app.min.css"
         }
       },
 
       uglify: {
         js: {
-          src: "dist/js/app.js",
-          dest: "dist/js/app.min.js"
+          src: "deploy/js/app.js",
+          dest: "deploy/js/app.min.js"
         }
       },
 
       "gh-pages": {
         options: {
-          base: "dist/"
+          base: "deploy/"
         },
         src: ["**/*"]
       },
 
       clean: {
-        build: ["dist"]
+        build: ["deploy"]
       },
 
       connect: {
@@ -117,7 +126,7 @@
           tasks: ["jshint:gruntfile"]
         },
         scripts: {
-          files: ["src/js/*.js"],
+          files: ["app/js/*.js"],
           tasks: ["jshint:src"]
         },
         compass: {

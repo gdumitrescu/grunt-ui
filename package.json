@@ -4,7 +4,8 @@
   "description": "Front-End development workflow using Grunt",
   "main": "Gruntfile.js",
   "dependencies": {
-    "grunt": "~0.4.1"
+    "grunt": "~0.4.1",
+    "bower": "~1.2.7"
   },
   "devDependencies": {
     "grunt-contrib-clean": "~0.5.0",

@@ -13,13 +13,13 @@ sass_dir = "src/styles"
 sass_path = sass_dir
 
 css_dir = "styles"
-css_path  = File.join(dir_src, "../dist", "css")
+css_path  = File.join(dir_src, "../deploy", "css")
 
 images_dir = "images"
-images_path  = File.join(dir_src, "../dist", "img")
+images_path  = File.join(dir_src, "../deploy", "img")
 
 javascripts_dir = "scripts"
-javascripts_path  = File.join(dir_src, "../dist", "js")
+javascripts_path  = File.join(dir_src, "../deploy", "js")
 
 # SPRITES
 # Make a copy of sprites with a name that has no uniqueness of the hash.
