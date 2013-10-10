@@ -23,7 +23,7 @@
   },
   "scripts": {
     "start": "grunt",
-    "test": "testem"
+    "test": "testem ci"
   },
   "repository": "",
   "author": "Gabriel",
