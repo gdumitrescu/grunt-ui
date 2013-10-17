@@ -31,12 +31,14 @@
       compass: {
         dev: {
           options: {
-            config: "config/compass-dev.rb"
+            config: "config/compass-dev.rb",
+            bundleExec: true
           }
         },
         prod: {
           options: {
-            config: "config/compass-prod.rb"
+            config: "config/compass-prod.rb",
+            bundleExec: true
           }
         }
       },
