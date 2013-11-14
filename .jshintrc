@@ -9,6 +9,9 @@
   "immed": true,
   "indent": 2,
   "latedef": true,
+  "lastsemic": true,
+  "laxbreak": true,
+  "laxcomma": true,
   "newcap": true,
   "noarg": true,
   "quotmark": "double",
@@ -17,5 +20,12 @@
   "unused": true,
   "strict": true,
   "trailing": true,
-  "smarttabs": true
+  "smarttabs": true,
+  "globals": {
+    "jQuery": true,
+    "define": true,
+    "describe": true,
+    "require": true,
+    "it": true
+  }
 }
