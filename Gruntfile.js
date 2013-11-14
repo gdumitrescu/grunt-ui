@@ -3,12 +3,18 @@
   "use strict";
   module.exports = function(grunt) {
 
+    // load tasks
+    require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
+
+    require("time-grunt")(grunt);
+
     grunt.initConfig({
       pkg: grunt.file.readJSON("package.json"),
 
 
       jshint: {
         options: {
+          reporter: require("jshint-stylish"),
           jshintrc: ".jshintrc",
           globals: {
             document: true,
@@ -167,22 +173,6 @@
       }
 
     });
-
-    // load tasks
-    grunt.loadNpmTasks("grunt-contrib-jshint");
-    grunt.loadNpmTasks("grunt-contrib-compass");
-    grunt.loadNpmTasks("grunt-contrib-coffee");
-    grunt.loadNpmTasks("grunt-contrib-cssmin");
-    grunt.loadNpmTasks("grunt-contrib-uglify");
-    grunt.loadNpmTasks("grunt-contrib-concat");
-    grunt.loadNpmTasks("grunt-contrib-watch");
-    grunt.loadNpmTasks("grunt-contrib-connect");
-    grunt.loadNpmTasks("grunt-contrib-clean");
-    grunt.loadNpmTasks("grunt-gh-pages");
-    grunt.loadNpmTasks("grunt-concurrent");
-
-    // notifications
-    grunt.loadNpmTasks("grunt-notify");
 
     // register task
     grunt.registerTask("default", [
