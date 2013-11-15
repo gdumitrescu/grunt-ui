@@ -10,9 +10,9 @@
   ],
   "serve_files": [
     "app/js/**/*.js",
-    "spec/javascripts/**/*_spec.js"
+    "spec/javascripts/**/*.spec.js"
   ],
   "on_exit": [
-    "find spec/javascripts/ -iname '*_spec.*' | xargs rm -rfv"
+    "find spec/javascripts/ -iname '*.spec.*' | xargs rm -rfv"
   ]
 }

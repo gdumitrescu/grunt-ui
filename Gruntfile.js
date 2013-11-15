@@ -11,7 +11,6 @@
     grunt.initConfig({
       pkg: grunt.file.readJSON("package.json"),
 
-
       jshint: {
         options: {
           reporter: require("jshint-stylish"),
@@ -113,19 +112,19 @@
 
       concurrent: {
         dev: [
-          "coffee",
-          "compass:dev",
+          "any-newer:coffee",
+          "any-newer:compass:dev",
         ],
         test: [
-          "jshint"
+          "newer:jshint"
         ],
         prod: [
-          "coffee",
-          "compass:prod"
+          "any-newer:coffee",
+          "any-newer:compass:prod"
         ],
         minify: [
-          "uglify",
-          "cssmin"
+          "any-newer:uglify",
+          "any-newer:cssmin"
         ]
       },
 
@@ -149,19 +148,19 @@
       watch: {
         gruntfile: {
           files: ["Gruntfile.js"],
-          tasks: ["jshint:gruntfile"]
+          tasks: ["newer:jshint:gruntfile"]
         },
         scripts: {
           files: ["app/js/*.js"],
-          tasks: ["jshint:src"]
+          tasks: ["newer:jshint:src"]
         },
         compass: {
           files: ["src/styles/**/*.{scss,sass}"],
-          tasks: ["compass"]
+          tasks: ["any-newer:compass"]
         },
         coffee: {
           files: ["src/scripts/*.coffee"],
-          tasks: ["coffee"]
+          tasks: ["any-newer:coffee"]
         },
         livereload: {
           options: {
