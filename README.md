@@ -1,7 +1,7 @@
 ## Front-End development workflow using Grunt
 
-[![Dependency Status](https://david-dm.org/gdumitrescu/grunt-ui.png)](https://david-dm.org/gdumitrescu/grunt-ui)
-[![devDependency Status](https://david-dm.org/gdumitrescu/grunt-ui/dev-status.png)](https://david-dm.org/gdumitrescu/grunt-ui#info=devDependencies)
+[![Dependency Status](https://david-dm.org/revivui/grunt-ui.svg)](https://david-dm.org/revivui/grunt-ui)
+[![devDependency Status](https://david-dm.org/revivui/grunt-ui/dev-status.svg)](https://david-dm.org/revivui/grunt-ui#info=devDependencies)
 
 ### Credits
 [Grunt](http://gruntjs.com/) - The JavaScript Task Runner
