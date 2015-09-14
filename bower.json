@@ -1,9 +1,7 @@
 {
   "name": "grunt-ui",
   "version": "0.0.1",
-  "authors": [
-    "Gabriel Dumitrescu <gabriel@planetmail.com>"
-  ],
+  "authors": "",
   "license": "MIT",
   "ignore": [
     "**/.*",
